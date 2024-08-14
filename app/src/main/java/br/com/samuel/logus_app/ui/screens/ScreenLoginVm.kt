@@ -1,13 +1,11 @@
 package br.com.samuel.logus_app.ui.screens
 
 import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.samuel.logus_app.backendservices.api.ApiService
 import br.com.samuel.logus_app.model.ApiTokenRequest
-import br.com.samuel.logus_app.utils.ApiUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
