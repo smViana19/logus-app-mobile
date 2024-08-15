@@ -10,5 +10,7 @@ data class ApiTokenResponse(
     @SerializedName("errors")
     val errors: List<String>,
     @SerializedName("status")
-    val status: Int
+    val status: Int,
+    @SerializedName("msg")
+    val msgSuccess: String?
 )
