@@ -67,6 +67,9 @@ dependencies {
     implementation(libs.hilt.compose.navigation)
     implementation(libs.retrofit.gson.convertor)
     implementation(libs.androidx.room.runtime)
+    implementation(libs.lottie.compose)
+
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
