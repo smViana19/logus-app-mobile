@@ -60,15 +60,6 @@ class ScreenLoginVm @Inject constructor(
                     saveUser(name, email.value, password.value, role)
                     println("saveuser:$name, $role ")
                     _isLoading.value = false
-                    _dialogState.value = DialogState(
-                        open = true,
-                        type = DialogType.SUCCESS,
-                        title = "Sucesso",
-                        msg = response.msgSuccess,
-                        onConfirm = {
-                            onClickButtonDismissDialog()
-                        }
-                    )
                 }
             } catch (e: HttpException) {
                 val errorBody = e.response()?.errorBody()?.string()
