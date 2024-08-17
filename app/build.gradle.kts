@@ -68,8 +68,7 @@ dependencies {
     implementation(libs.retrofit.gson.convertor)
     implementation(libs.androidx.room.runtime)
     implementation(libs.lottie.compose)
-
-
+    implementation(libs.androidx.navigation.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
