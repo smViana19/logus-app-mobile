@@ -4,8 +4,24 @@ import android.annotation.SuppressLint
 import android.content.Context
 import br.com.samuel.logus_app.model.ApiUserRequest
 
-class SharedPrefsServiceImpl(context: Context): SharedPrefsService {
+/**
+ * Implementation of the SharedPrefsService interface.
+ *
+ * This class provides methods for saving and retrieving user data from shared preferences.
+ *
+ * @param context The application context.
+ */
+class SharedPrefsServiceImpl(context: Context) : SharedPrefsService {
     private val sharedPreferences = context.getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
+
+    /**
+     * Saves user data to shared preferences.
+     *
+     * @param name The user's name.
+     * @param email The user's email.
+     * @param password The user's password.
+     * @param role The user's role.
+     */
     @SuppressLint("CommitPrefEdits")
     override fun saveUserData(
         name: String,
@@ -21,7 +37,11 @@ class SharedPrefsServiceImpl(context: Context): SharedPrefsService {
             apply()
         }
     }
-
+    /**
+     * Gets user data from shared preferences.
+     *
+     * @return The user data as an ApiUserRequest object.
+     */
     override fun getUserData(): ApiUserRequest {
         val name = sharedPreferences.getString("user_name", "") ?: ""
         val email = sharedPreferences.getString("user_email", "") ?: ""
