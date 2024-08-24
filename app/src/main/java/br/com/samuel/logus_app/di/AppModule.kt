@@ -14,16 +14,31 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+
+/**
+ * AppModule is a Dagger module that provides dependencies for the application.
+ */
+
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
-
+    /**
+     * Provides an OkHttpClient instance.
+     *
+     * @return An OkHttpClient instance.
+     */
     @Provides
     fun provideOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
             .build()
     }
 
+    /**
+     *Provides a Retrofit instance.
+     *
+     * @param okHttpClient The OkHttpClient instance to use.
+     * @return A Retrofit instance.
+     */
     @Provides
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
@@ -33,10 +48,23 @@ object AppModule {
             .build()
     }
 
+    /**
+     * Provides an ApiService instance.
+     *
+     * @param retrofit The Retrofit instance to use.
+     * @return An ApiService instance.*/
+
     @Provides
     fun provideApiService(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
     }
+
+    /**
+     * Provides a SharedPrefsService instance.
+     *
+     * @param context The application context.
+     * @return A SharedPrefsService instance.
+     */
 
     @Provides
     fun provideSharedPrefsService(@ApplicationContext context: Context): SharedPrefsService {
