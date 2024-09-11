@@ -4,10 +4,12 @@ const val APP_URL = "http://10.0.2.2:3000" // Base URL da API utilizada na aplic
 
 /**
  * Api mappers User
- *
  */
 const val URL_JSON_CREATE_USER = "/users/" // Endpoint para criar um novo usuário no sistema (requisição POST).
 const val URL_JSON_TOKENS = "/tokens/" // Endpoint para autenticação de usuário e geração de tokens (requisição POST).
+
+
+
 const val URL_JSON_TASKS = "/tarefas" // Endpoint para ir as tarefas
 const val URL_JSON_SUBJECTS = "/materias/" //Endpoint para a rota de materias
 const val URL_JSON_SUBJECTS_MATERIALS = "/materias/material/" //Endpoint para ir aos materials
