@@ -52,7 +52,8 @@ object AppModule {
      * Provides an ApiService instance.
      *
      * @param retrofit The Retrofit instance to use.
-     * @return An ApiService instance.*/
+     * @return An ApiService instance.
+     */
 
     @Provides
     fun provideApiService(retrofit: Retrofit): ApiService {

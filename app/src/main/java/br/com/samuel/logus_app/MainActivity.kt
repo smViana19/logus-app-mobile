@@ -37,10 +37,10 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 NavHost(navController = navController, startDestination = "dashboard") {
                     composable("dashboard") {
-                        ScreenDashboard()
+                        ScreenLogin()
                     }
                     composable("login") {
-                        ScreenLogin()
+                        ScreenDashboard()
                     }
                     //Add more composable screens
                 }

@@ -11,7 +11,7 @@ import br.com.samuel.logus_app.backendservices.sharedprefs.SharedPrefsService
 import br.com.samuel.logus_app.model.ApiTokenRequest
 import br.com.samuel.logus_app.ui.dialogs.DialogState
 import br.com.samuel.logus_app.ui.dialogs.DialogType
-import br.com.samuel.logus_app.ui.navigation.NavigationManager
+//import br.com.samuel.logus_app.ui.navigation.NavigationManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
@@ -21,7 +21,7 @@ import javax.inject.Inject
 class ScreenLoginVm @Inject constructor(
     private val apiService: ApiService,
     private val sharedPrefsService: SharedPrefsService,
-    private val navigationManager: NavigationManager
+//    private val navigationManager: NavigationManager
 ) : ViewModel() {
     private val _email = mutableStateOf("")
     val email: MutableState<String> = _email
@@ -63,7 +63,7 @@ class ScreenLoginVm @Inject constructor(
                     saveUser(name, email.value, password.value, role)
                     println("saveuser:$name, $role ")
                     _isLoading.value = false
-                    navigationManager.navigateToDashboard(response) // ver se e isso
+//                    navigationManager.navigateToDashboard(response) // ver se e isso
                 }
             } catch (e: HttpException) {
                 val errorBody = e.response()?.errorBody()?.string()
